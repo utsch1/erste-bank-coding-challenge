@@ -10,6 +10,7 @@ const navBar = css`
   border-radius: 6px;
   margin: 15px 15px 0 15px;
   color: ${darkBlue};
+  z-index: 99;
 `;
 
 const firstRow = css`
