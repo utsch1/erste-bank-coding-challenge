@@ -4,6 +4,7 @@ import { blue, darkBlue, lightBlue, white } from '../Global';
 import logo from '../Images/logo.svg';
 
 const navBar = css`
+  position: absolute;
   width: calc(100vw - 30px);
   height: 130px;
   background-color: ${blue};

@@ -3,22 +3,42 @@ import { css } from '@emotion/react';
 import { white } from '../Global';
 import george from '../Images/george.webp';
 
-const image = css`
-  height: 80%;
+const goodbyeWrapper = css`
+  height: 80vh;
+  width: 100vw;
+`;
+
+const goodbyeImage = css`
+  height: 80vh;
   width: 100vw;
   position: absolute;
   top: 0;
   left: 0;
+  background-image: url(${george});
   object-fit: cover;
   z-index: -1;
 `;
 
-const goodbye = css`
+// const image = css`
+//   height: 80%;
+//   width: 100vw;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   object-fit: cover;
+//   z-index: -1;
+// `;
+
+const goodbyeTextWrapper = css`
+  width: 100vw;
   display: flex;
-  width: fit-content;
-  margin: 90px auto 20px auto;
+  flex-direction: column;
+`;
+
+const goodbye = css`
   color: ${white};
   text-align: center;
+  margin-top: 250px;
 `;
 
 const buttonsWrapper = css`
@@ -46,18 +66,21 @@ const buttons = css`
 
 export function LogoutSuccess() {
   return (
-    <div>
-      <img
+    <div css={goodbyeWrapper}>
+      <div css={goodbyeImage} />
+      {/* <img
         src={george}
         alt="online banking screen with George Logo in blue"
         css={image}
-      />
-      <h1 css={goodbye}>
-        Auf Wiedersehen, <br /> bis zum nächsten Mal.
-      </h1>
-      <div css={buttonsWrapper}>
-        <button css={buttons}>Zurück zu George</button>
-        <button css={buttons}>Zur Startseite</button>
+      /> */}
+      <div css={goodbyeTextWrapper}>
+        <h1 css={goodbye}>
+          Auf Wiedersehen, <br /> bis zum nächsten Mal.
+        </h1>
+        <div css={buttonsWrapper}>
+          <button css={buttons}>Zurück zu George</button>
+          <button css={buttons}>Zur Startseite</button>
+        </div>
       </div>
     </div>
   );
