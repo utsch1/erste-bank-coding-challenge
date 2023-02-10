@@ -1,5 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
+import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { blue, darkBlue, gray, white } from '../Global';
 import sicherheitsCenter from '../Images/sicherheits-center-footer.png';
 import ssl from '../Images/ssl.png';
@@ -12,9 +14,32 @@ const footerWrapper = css`
   padding-bottom: 15px;
 `;
 
+const buttonsWrapper = css`
+  display: flex;
+  justify-content: flex-end;
+`;
+
+const buttons = css`
+  background-color: transparent;
+  color: white;
+  border: 1px solid ${white};
+  border-radius: 6px;
+  padding: 8px 17px;
+  margin: 15px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  gap: 6px;
+
+  :hover {
+    opacity: 0.5;
+  }
+`;
+
 const footerContent = css`
   height: 350px;
-  margin: 50px 100px 0 100px;
+  margin: 50px 150px 0 150px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -22,6 +47,7 @@ const footerContent = css`
 `;
 
 const footerContentSections = css`
+  min-width: 20%;
   height: auto;
   display: flex;
   flex-direction: column;
@@ -31,27 +57,38 @@ const footerContentSections = css`
 
   h3 {
     font-size: 1rem;
+    margin: 0;
   }
   a {
     font-size: 0.875rem;
+    cursor: pointer;
+
+    :hover {
+      opacity: 0.5;
+    }
   }
 `;
 
 const imageSecurity = css`
   width: 120px;
   height: auto;
+  margin-bottom: 12px;
 `;
 
 const textSizeSpan = css`
-  box-sizing: content-box;
-
   div {
-    padding: 0.5px 4px;
+    display: inline-block;
+    padding: 3px 12px;
+    margin-right: 6px;
     border: 1px solid ${white};
     border-radius: 6px;
     font-weight: 600;
-    overflow: hidden;
-    white-space: nowrap;
+    font-size: 0.875rem;
+    line-height: 2;
+
+    :hover {
+      opacity: 0.5;
+    }
   }
 `;
 
@@ -67,7 +104,12 @@ const footerBar = css`
 export function Footer() {
   return (
     <div css={footerWrapper}>
-      <button>Zum Anfang</button>
+      <div css={buttonsWrapper}>
+        <a css={buttons}>
+          <FontAwesomeIcon icon={faArrowUp} />
+          Zum Anfang
+        </a>
+      </div>
       <div css={footerContent}>
         <div css={footerContentSections}>
           <h3>Erste Bank</h3>

@@ -4,6 +4,7 @@ import { darkBlue, mediumBlue } from '../Global';
 import Bausparen from '../Images/bausparen.webp';
 import GooglePay from '../Images/googlePay.webp';
 import Kreditkarten from '../Images/kreditkarten.webp';
+import Versicherung from '../Images/versicherung.webp';
 
 // import { white } from '../Global';
 
@@ -104,16 +105,17 @@ export function Products() {
       </div>
       <div css={productWrapper}>
         <div>
-          <img src={GooglePay} alt="Google Pay" css={imageWrapper} />
+          <img
+            src={Versicherung}
+            alt="Eine Gruppe an Personen die gemeinsam auf einen Punkt nach vorne schauen, bis auf Opa und Enkel, die sich einander anschauen"
+            css={imageWrapper}
+          />
         </div>
         <div css={productText}>
-          <h2>Google Pay ™</h2>
-          <p>Bezahlen, schneller als Ihr Schatten.</p>
+          <h2>Vorsorgen</h2>
+          <p>Sichern Sie sich und Ihre Finanzen ab.</p>
           <div>
-            <a>
-              Bezahlen mit Google <br />
-              Pay
-            </a>
+            <a>Jetzt absichern</a>
           </div>
         </div>
       </div>
@@ -121,7 +123,7 @@ export function Products() {
         <div>
           <img
             src={Bausparen}
-            alt="ein Mann der auf einer Couch und einem Sessel einen Vorwärtsspagat macht "
+            alt="Ein Mann der auf einer Couch und einem Sessel einen Vorwärtsspagat macht "
             css={imageWrapper}
           />
         </div>

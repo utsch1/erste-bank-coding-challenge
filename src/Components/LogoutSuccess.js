@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import { white } from '../Global';
+import { darkBlue, white } from '../Global';
 import george from '../Images/george.webp';
 
 const goodbyeWrapper = css`
@@ -19,20 +19,20 @@ const goodbyeImage = css`
   z-index: -1;
 `;
 
-// const image = css`
-//   height: 80%;
-//   width: 100vw;
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   object-fit: cover;
-//   z-index: -1;
-// `;
+const gradientOverlay = css`
+  width: 100vw;
+  height: 80vh;
+  background-color: ${darkBlue};
+  opacity: 0.3;
+  position: absolute;
+`;
 
 const goodbyeTextWrapper = css`
   width: 100vw;
   display: flex;
   flex-direction: column;
+  z-index: 1;
+  position: absolute;
 `;
 
 const goodbye = css`
@@ -69,11 +69,7 @@ export function LogoutSuccess() {
   return (
     <div css={goodbyeWrapper}>
       <div css={goodbyeImage} />
-      {/* <img
-        src={george}
-        alt="online banking screen with George Logo in blue"
-        css={image}
-      /> */}
+      <div css={gradientOverlay} />
       <div css={goodbyeTextWrapper}>
         <h1 css={goodbye}>
           Auf Wiedersehen, <br /> bis zum nächsten Mal.

@@ -1,5 +1,10 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
+import {
+  faChevronDown,
+  faMagnifyingGlass,
+} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { blue, darkBlue, lightBlue, white } from '../Global';
 import logo from '../Images/logo.svg';
 
@@ -28,6 +33,11 @@ const clients = css`
   color: ${darkBlue};
   border-radius: 6px;
   border: 1px solid ${lightBlue};
+  padding: 0 17px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
 `;
 
 const firstRowWithoutLogo = css`
@@ -43,10 +53,17 @@ const firstRowLinks = css`
   display: flex;
   gap: 2rem;
   justify-content: space-between;
+
+  a {
+    cursor: pointer;
+  }
 `;
 
 const search = css`
   font-weight: 600;
+  display: flex;
+  gap: 6px;
+  cursor: pointer;
 `;
 
 const secondRow = css`
@@ -60,6 +77,10 @@ const secondRowLinks = css`
   display: flex;
   gap: 2rem;
   font-weight: 600;
+
+  a {
+    cursor: pointer;
+  }
 `;
 
 const login = css`
@@ -67,9 +88,12 @@ const login = css`
   color: ${white};
   border-radius: 6px;
   border: 1px solid ${darkBlue};
-  padding: 8px 30px 8px 17px;
+  padding: 8px 17px 8px 17px;
   font-weight: 700;
   font-size: 1rem;
+  display: flex;
+  gap: 6px;
+  cursor: pointer;
 `;
 
 export function Header() {
@@ -83,9 +107,10 @@ export function Header() {
             </div>
             <div css={firstRowWithoutLogo}>
               <div>
-                <button css={clients}>
-                  <span>für ...</span>
-                </button>
+                <a css={clients}>
+                  für ...
+                  <FontAwesomeIcon icon={faChevronDown} />
+                </a>
               </div>
               <div css={firstRowLinks}>
                 <a>Filiale suchen</a>
@@ -93,7 +118,10 @@ export function Header() {
                 <a>Sparkasse wählen</a>
                 <a>English</a>
               </div>
-              <div css={search}>Suche</div>
+              <div css={search}>
+                <FontAwesomeIcon icon={faMagnifyingGlass} size="lg" />
+                Suche
+              </div>
             </div>
           </div>
           <div css={secondRow}>
@@ -106,7 +134,10 @@ export function Header() {
               <a>Online eröffnen</a>
             </div>
             <div>
-              <button css={login}>Login</button>
+              <a css={login}>
+                Login
+                <FontAwesomeIcon icon={faChevronDown} />
+              </a>
             </div>
           </div>
         </nav>
