@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import { darkBlue, white } from '../Global';
+import { white } from '../Global';
 import george from '../Images/george.webp';
 
 const goodbyeWrapper = css`

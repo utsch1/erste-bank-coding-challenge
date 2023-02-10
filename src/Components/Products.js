@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import { darkBlue, mediumBlue } from '../Global';
+import { mediumBlue } from '../Global';
 import Bausparen from '../Images/bausparen.webp';
 import GooglePay from '../Images/googlePay.webp';
 import Kreditkarten from '../Images/kreditkarten.webp';
