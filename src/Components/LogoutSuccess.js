@@ -58,6 +58,7 @@ const buttons = css`
   margin: 6px 0;
   font-size: 1rem;
   font-weight: 600;
+  cursor: pointer;
 
   :hover {
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);

@@ -20,6 +20,7 @@ const productWrapper = css`
   border-radius: 6px;
   margin: 0 15px;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  cursor: pointer;
 
   :hover {
     background-color: #f8f8f8;
