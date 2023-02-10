@@ -22,8 +22,8 @@ const goodbyeImage = css`
 const gradientOverlay = css`
   width: 100vw;
   height: 80vh;
-  background-color: ${darkBlue};
-  opacity: 0.3;
+  background-color: #000;
+  opacity: 0.5;
   position: absolute;
 `;
 

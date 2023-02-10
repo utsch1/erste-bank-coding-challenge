@@ -2,9 +2,17 @@
 import { css } from '@emotion/react';
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { blue, darkBlue, gray, white } from '../Global';
+import { blue, darkBlue, gray, mediumBlue, white } from '../Global';
+import facebook from '../Images/facebook.svg';
+import instagram from '../Images/instagram.svg';
+import linkedin from '../Images/linkedin.svg';
+import logo from '../Images/logo.svg';
 import sicherheitsCenter from '../Images/sicherheits-center-footer.png';
 import ssl from '../Images/ssl.png';
+import tiktok from '../Images/tiktok.svg';
+import twitter from '../Images/twitter.svg';
+import xing from '../Images/xing.svg';
+import youtube from '../Images/youtube.svg';
 
 const footerWrapper = css`
   width: 100vw;
@@ -93,12 +101,53 @@ const textSizeSpan = css`
 `;
 
 const footerBar = css`
-  width: calc(100vw - 30px);
-  height: 130px;
+  width: calc(100vw - 60px);
+  height: auto;
   background-color: ${blue};
   border-radius: 6px;
-  margin: 15px;
+  margin: 15px 30px;
   color: ${darkBlue};
+  font-size: 0.875rem;
+  padding: 0 0 24px 0;
+`;
+
+const socialMediaIcons = css`
+  display: flex;
+  justify-content: center;
+  color: ${gray};
+  gap: 2rem;
+  padding: 24px 0 16px 0;
+  img {
+    height: 20px;
+    width: auto;
+    cursor: pointer;
+  }
+`;
+
+const logoErsteBank = css`
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+`;
+
+const footerInfo = css`
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-bottom: 15px;
+
+  a {
+    cursor: pointer;
+  }
+
+  a:hover {
+    color: ${mediumBlue};
+  }
+`;
+
+const copyright = css`
+  color: ${gray};
+  text-align: center;
 `;
 
 export function Footer() {
@@ -160,7 +209,28 @@ export function Footer() {
           </span>
         </div>
       </div>
-      <div css={footerBar}>hi</div>
+      <div css={footerBar}>
+        <div css={socialMediaIcons}>
+          Besuchen Sie uns auf
+          <img src={facebook} alt="facebook icon" />
+          <img src={youtube} alt="youtube icon" />
+          <img src={instagram} alt="youtube icon" />
+          <img src={twitter} alt="youtube icon" />
+          <img src={tiktok} alt="youtube icon" />
+          <img src={linkedin} alt="youtube icon" />
+          <img src={xing} alt="youtube icon" />
+        </div>
+        <div css={footerInfo}>
+          <a>Impressum</a>
+          <a>Datenschutz / Sicherheit</a>
+          <a>Cookie-Einstellungen</a>
+          <a>Geschäftsbedingungen</a>
+        </div>
+        <div css={logoErsteBank}>
+          <img src={logo} alt="logo" />
+        </div>
+        <div css={copyright}>© 2023 Erste Bank</div>
+      </div>
     </div>
   );
 }

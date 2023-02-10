@@ -5,7 +5,7 @@ import {
   faMagnifyingGlass,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { blue, darkBlue, lightBlue, white } from '../Global';
+import { blue, darkBlue, lightBlue, mediumBlue, white } from '../Global';
 import logo from '../Images/logo.svg';
 
 const navBar = css`
@@ -56,6 +56,10 @@ const firstRowLinks = css`
 
   a {
     cursor: pointer;
+
+    :hover {
+      color: ${mediumBlue};
+    }
   }
 `;
 
@@ -80,6 +84,10 @@ const secondRowLinks = css`
 
   a {
     cursor: pointer;
+
+    :hover {
+      color: ${mediumBlue};
+    }
   }
 `;
 
@@ -94,6 +102,11 @@ const login = css`
   display: flex;
   gap: 6px;
   cursor: pointer;
+
+  :hover {
+    background-color: #003a62;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  }
 `;
 
 export function Header() {
