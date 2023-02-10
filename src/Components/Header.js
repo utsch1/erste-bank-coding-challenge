@@ -6,6 +6,10 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { blue, darkBlue, lightBlue, mediumBlue, white } from '../Global';
+import hilfe from '../Images/achtungIcon.svg';
+import termin from '../Images/chatIcon.svg';
+import cookie from '../Images/fingerabdruckIcon.svg';
+import filiale from '../Images/karteIcon.svg';
 import logo from '../Images/logo.svg';
 
 const navBar = css`
@@ -109,6 +113,59 @@ const login = css`
   }
 `;
 
+const floatingNavWrapper = css`
+  width: 68px;
+  height: auto;
+  background-color: ${darkBlue};
+  color: ${white};
+  border-radius: 6px;
+  position: absolute;
+  right: 30px;
+  top: 25%;
+  position: fixed;
+  z-index: 98;
+  font-size: 0.6rem;
+  display: flex;
+  flex-direction: column;
+
+  div {
+    display: flex;
+    flex-direction: column;
+
+    :hover {
+      background-color: #003a62;
+      box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    }
+  }
+
+  div:first-child {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+  }
+
+  div:last-child {
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+  }
+
+  div:not(:last-child) {
+    border-bottom: 1px solid ${white};
+  }
+
+  div > img {
+    height: 25px;
+    width: auto;
+    align-self: center;
+    justify-self: center;
+    margin: 6px 6px 0 6px;
+  }
+
+  div > div {
+    margin: 3px 6px 6px 6px;
+    text-align: center;
+  }
+`;
+
 export function Header() {
   return (
     <div>
@@ -155,6 +212,24 @@ export function Header() {
           </div>
         </nav>
       </header>
+      <div css={floatingNavWrapper}>
+        <div>
+          <img src={filiale} alt="icon for map pin" />
+          <div>Filiale suchen</div>
+        </div>
+        <div>
+          <img src={termin} alt="chat icon" />
+          <div>Termin vereinbaren</div>
+        </div>
+        <div>
+          <img src={hilfe} alt="chat icon" />
+          <div>Hilfe im Notfall</div>
+        </div>
+        <div>
+          <img src={cookie} alt="chat icon" />
+          <div>Cookies einstellen</div>
+        </div>
+      </div>
     </div>
   );
 }

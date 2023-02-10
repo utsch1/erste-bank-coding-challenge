@@ -1,4 +1,5 @@
 import { Contact } from './Components/Contact';
+// import { FloatingNav } from './Components/FloatingNavigation';
 import { Footer } from './Components/Footer';
 import { Header } from './Components/Header';
 import { LogoutSuccess } from './Components/LogoutSuccess';
@@ -10,6 +11,7 @@ function App() {
   return (
     <div css={container}>
       <Header />
+      {/* <FloatingNav /> */}
       <LogoutSuccess />
       <Products />
       <Contact />
