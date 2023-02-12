@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
+import { AnimationOnScroll } from 'react-animation-on-scroll';
 import { darkOrange, orange, white } from '../Global';
 import contact from '../Images/kontakt.webp';
 
@@ -60,11 +61,13 @@ export function Contact() {
     <div css={contactWrapper}>
       <img src={contact} alt="man looking at you" css={image} />
       <div css={gradientOverlay} />
-      <div css={textWrapper}>
-        <h2>Haben Sie Fragen?</h2>
-        <p>Wir beraten Sie gern - einfach Gesprächstermin vereinbaren.</p>
-        <a>Termin vereinbaren</a>
-      </div>
+      <AnimationOnScroll animateIn="animate__fadeInUp">
+        <div css={textWrapper}>
+          <h2>Haben Sie Fragen?</h2>
+          <p>Wir beraten Sie gern - einfach Gesprächstermin vereinbaren.</p>
+          <a>Termin vereinbaren</a>
+        </div>
+      </AnimationOnScroll>
     </div>
   );
 }

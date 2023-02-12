@@ -51,6 +51,7 @@ const buttonsWrapper = css`
 
 const buttons = css`
   background-color: transparent;
+  text-decoration: none;
   color: white;
   border: 1px solid ${white};
   border-radius: 6px;
@@ -75,8 +76,15 @@ export function LogoutSuccess() {
           Auf Wiedersehen, <br /> bis zum nächsten Mal.
         </h1>
         <div css={buttonsWrapper}>
-          <button css={buttons}>Zurück zu George</button>
-          <button css={buttons}>Zur Startseite</button>
+          <a href="https://george.sparkasse.at/" css={buttons}>
+            Zurück zu George
+          </a>
+          <a
+            href="https://www.sparkasse.at/erstebank/privatkunden"
+            css={buttons}
+          >
+            Zur Startseite
+          </a>
         </div>
       </div>
     </div>

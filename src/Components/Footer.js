@@ -63,9 +63,10 @@ const footerContentSections = css`
   padding: 0 15px;
   margin-bottom: 30px;
 
-  h3 {
+  div {
     font-size: 1rem;
     margin: 0;
+    font-weight: 600;
   }
   a {
     font-size: 0.875rem;
@@ -137,6 +138,8 @@ const footerInfo = css`
   margin-bottom: 15px;
 
   a {
+    color: ${darkBlue};
+    text-decoration: none;
     cursor: pointer;
   }
 
@@ -151,17 +154,22 @@ const copyright = css`
 `;
 
 export function Footer() {
+  // Scroll to top function
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <div css={footerWrapper}>
       <div css={buttonsWrapper}>
-        <a css={buttons}>
+        <button onClick={handleScrollToTop} css={buttons}>
           <FontAwesomeIcon icon={faArrowUp} />
           Zum Anfang
-        </a>
+        </button>
       </div>
       <div css={footerContent}>
         <div css={footerContentSections}>
-          <h3>Erste Bank</h3>
+          <div>Erste Bank</div>
           <a>Wir über uns</a>
           <a>Filialen & Öffnungszeiten</a>
           <a>Erreichbarkeit</a>
@@ -172,17 +180,17 @@ export function Footer() {
           <a>Stiftungen</a>
         </div>
         <div css={footerContentSections}>
-          <h3>Presse</h3>
+          <div>Presse</div>
           <a>Pressemitteilungen</a>
           <a>Medienkontakte</a>
         </div>
         <div css={footerContentSections}>
-          <h3>Karriere</h3>
+          <div>Karriere</div>
           <a>Übersicht</a>
           <a>Stellenangebote</a>
         </div>
         <div css={footerContentSections}>
-          <h3>Rechtliches</h3>
+          <div>Rechtliches</div>
           <a>Im Überblick</a>
           <a>AGB</a>
           <a>Datenschutz / Sicherheit</a>
@@ -192,7 +200,7 @@ export function Footer() {
           <a>Open Banking</a>
         </div>
         <div css={footerContentSections}>
-          <h3>Sicherheit</h3>
+          <div>Sicherheit</div>
           <img src={ssl} alt="ssl secure connection icon" css={imageSecurity} />
           <img
             src={sicherheitsCenter}
@@ -201,7 +209,7 @@ export function Footer() {
           />
         </div>
         <div css={footerContentSections}>
-          <h3>Textgröße</h3>
+          <div>Textgröße</div>
           <span css={textSizeSpan}>
             <div>A</div>
             <div>A+</div>
@@ -221,10 +229,18 @@ export function Footer() {
           <img src={xing} alt="youtube icon" />
         </div>
         <div css={footerInfo}>
-          <a>Impressum</a>
-          <a>Datenschutz / Sicherheit</a>
-          <a>Cookie-Einstellungen</a>
-          <a>Geschäftsbedingungen</a>
+          <a href="https://www.sparkasse.at/erstebank/wir-ueber-uns/impressum">
+            Impressum
+          </a>
+          <a href="https://www.sparkasse.at/erstebank/wir-ueber-uns/datenschutz-sicherheit">
+            Datenschutz / Sicherheit
+          </a>
+          <a href="https://www.sparkasse.at/erstebank/wir-ueber-uns/datenschutz-sicherheit/cookies">
+            Cookie-Einstellungen
+          </a>
+          <a href="https://www.sparkasse.at/erstebank/wir-ueber-uns/agb">
+            Geschäftsbedingungen
+          </a>
         </div>
         <div css={logoErsteBank}>
           <img src={logo} alt="logo" />

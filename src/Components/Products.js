@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import { mediumBlue } from '../Global';
+import { gray, mediumBlue } from '../Global';
 import Bausparen from '../Images/bausparen.webp';
 import GooglePay from '../Images/googlePay.webp';
 import Kreditkarten from '../Images/kreditkarten.webp';
@@ -17,6 +17,8 @@ const productSectionWrapper = css`
 const productWrapper = css`
   width: 228px;
   height: 452px;
+  color: ${gray};
+  text-decoration: none;
   border: 1px solid lightgray;
   border-radius: 6px;
   margin: 0 15px;
@@ -25,6 +27,10 @@ const productWrapper = css`
 
   :hover {
     background-color: #f8f8f8;
+  }
+
+  :active {
+    border: 1px solid black;
   }
 `;
 
@@ -69,7 +75,10 @@ const productText = css`
 export function Products() {
   return (
     <div css={productSectionWrapper}>
-      <div css={productWrapper}>
+      <a
+        href="https://www.sparkasse.at/erstebank/privatkunden/konto-karten/google-pay"
+        css={productWrapper}
+      >
         <div>
           <img src={GooglePay} alt="Google Pay" css={imageWrapper} />
         </div>
@@ -77,14 +86,15 @@ export function Products() {
           <h2>Google Pay ™</h2>
           <p>Bezahlen, schneller als Ihr Schatten.</p>
           <div>
-            <a>
-              Bezahlen mit Google <br />
-              Pay
-            </a>
+            Bezahlen mit Google <br />
+            Pay
           </div>
         </div>
-      </div>
-      <div css={productWrapper}>
+      </a>
+      <a
+        href="https://www.sparkasse.at/erstebank/privatkunden/konto-karten/s-kreditkarten"
+        css={productWrapper}
+      >
         <div>
           <img
             src={Kreditkarten}
@@ -98,12 +108,13 @@ export function Products() {
             Neu: Smartcard oder Premiumcard mit Split Now-Funktion. Jetzt im 1.
             Jahr gratis*.
           </p>
-          <div>
-            <a>Zu den Kreditkarten</a>
-          </div>
+          <div>Zu den Kreditkarten</div>
         </div>
-      </div>
-      <div css={productWrapper}>
+      </a>
+      <a
+        href="https://www.sparkasse.at/erstebank/privatkunden/vorsorgen-versichern/kampagne/financial-health-versicherungen"
+        css={productWrapper}
+      >
         <div>
           <img
             src={Versicherung}
@@ -114,12 +125,13 @@ export function Products() {
         <div css={productText}>
           <h2>Vorsorgen</h2>
           <p>Sichern Sie sich und Ihre Finanzen ab.</p>
-          <div>
-            <a>Jetzt absichern</a>
-          </div>
+          <div>Jetzt absichern</div>
         </div>
-      </div>
-      <div css={productWrapper}>
+      </a>
+      <a
+        href="https://www.sparkasse.at/erstebank/privatkunden/sparen-anlegen/sparen/bausparen"
+        css={productWrapper}
+      >
         <div>
           <img
             src={Bausparen}
@@ -133,11 +145,9 @@ export function Products() {
             Sicher sparen mit fixen oder variablen Zinsen und staatlicher
             Prämie.
           </p>
-          <div>
-            <a>Zum s Bausparen</a>
-          </div>
+          <div>Zum s Bausparen</div>
         </div>
-      </div>
+      </a>
     </div>
   );
 }

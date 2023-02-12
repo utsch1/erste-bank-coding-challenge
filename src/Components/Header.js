@@ -5,7 +5,14 @@ import {
   faMagnifyingGlass,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { blue, darkBlue, lightBlue, mediumBlue, white } from '../Global';
+import {
+  blue,
+  blueOpacity,
+  darkBlue,
+  lightBlue,
+  mediumBlue,
+  white,
+} from '../Global';
 import hilfe from '../Images/achtungIcon.svg';
 import termin from '../Images/chatIcon.svg';
 import cookie from '../Images/fingerabdruckIcon.svg';
@@ -16,11 +23,15 @@ const navBar = css`
   position: absolute;
   width: calc(100vw - 30px);
   height: 130px;
-  background-color: ${blue};
+  background-color: ${blueOpacity};
   border-radius: 6px;
   margin: 15px 15px 0 15px;
   color: ${darkBlue};
   z-index: 99;
+
+  :hover {
+    background-color: ${blue};
+  }
 `;
 
 const firstRow = css`
@@ -149,7 +160,7 @@ const floatingNavWrapper = css`
   }
 
   div:not(:last-child) {
-    border-bottom: 1px solid ${white};
+    border-bottom: 1px solid rgb(255, 255, 255, 0.3);
   }
 
   div > img {
@@ -173,7 +184,9 @@ export function Header() {
         <nav css={navBar}>
           <div css={firstRow}>
             <div>
-              <img src={logo} alt="logo" />
+              <a href="https://www.sparkasse.at/erstebank/privatkunden">
+                <img src={logo} alt="logo" />
+              </a>
             </div>
             <div css={firstRowWithoutLogo}>
               <div>
