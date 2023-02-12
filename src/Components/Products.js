@@ -6,8 +6,6 @@ import GooglePay from '../Images/googlePay.webp';
 import Kreditkarten from '../Images/kreditkarten.webp';
 import Versicherung from '../Images/versicherung.webp';
 
-// import { white } from '../Global';
-
 const productSectionWrapper = css`
   padding: 36px 0;
   display: flex;
