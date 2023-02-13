@@ -1,6 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import { darkOrange, orange, white } from '../Global';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useState } from 'react';
+import { blueOpacity, darkBlue, darkOrange, orange, white } from '../Global';
 import contact from '../Images/kontakt.webp';
 
 const contactWrapper = css`
@@ -56,7 +59,38 @@ const textWrapper = css`
   }
 `;
 
+const contactFormWrapper = css`
+  position: fixed;
+  width: calc(100vw - 100px);
+  height: 100vh;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: ${blueOpacity};
+  z-index: 100;
+  padding: 50px;
+  animation: fadeIn 0.45s ease;
+`;
+
+const contactFormIcon = css`
+  background-color: transparent;
+  border: 0;
+  color: ${darkBlue};
+  float: right;
+`;
+
 export function Contact() {
+  // function to open and close contact form
+  const [contactForm, setContactForm] = useState(false);
+  const handleClick = () => {
+    if (contactForm === false) {
+      setContactForm(true);
+    } else {
+      setContactForm(false);
+    }
+  };
+
   return (
     <div css={contactWrapper}>
       <img src={contact} alt="man looking at you" css={image} />
@@ -69,8 +103,15 @@ export function Contact() {
       >
         <h2>Haben Sie Fragen?</h2>
         <p>Wir beraten Sie gern - einfach Gesprächstermin vereinbaren.</p>
-        <button>Termin vereinbaren</button>
+        <button onClick={handleClick}>Termin vereinbaren</button>
       </div>
+      {contactForm && (
+        <div css={contactFormWrapper} id="overlay">
+          <button onClick={handleClick} css={contactFormIcon}>
+            <FontAwesomeIcon icon={faTimes} size="3x" />
+          </button>
+        </div>
+      )}
     </div>
   );
 }
