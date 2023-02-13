@@ -39,9 +39,10 @@ const textWrapper = css`
     margin-bottom: 60px;
   }
 
-  a {
+  button {
     padding: 8px 17px;
     background-color: ${orange};
+    color: ${white};
     border: 1px solid ${orange};
     border-radius: 6px;
     cursor: pointer;
@@ -68,7 +69,7 @@ export function Contact() {
       >
         <h2>Haben Sie Fragen?</h2>
         <p>Wir beraten Sie gern - einfach Gesprächstermin vereinbaren.</p>
-        <a>Termin vereinbaren</a>
+        <button>Termin vereinbaren</button>
       </div>
     </div>
   );
